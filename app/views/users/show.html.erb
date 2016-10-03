@@ -1,0 +1,8 @@
+<% if logged_in? %>
+<h1><%= current_user.username %>'s Events</h1> 
+<p><% current_user_events.each_entry do |entry| %>
+	<li><%= entry.title %></li>
+	<%end%>
+</p>
+
+<%end%>

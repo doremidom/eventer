@@ -1,0 +1,5 @@
+<% if !logged_in? %>
+<%= render 'shared/login' %>
+<%else%>
+<%= current_user.username %>
+<%end%>

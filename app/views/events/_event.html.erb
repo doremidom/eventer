@@ -1,0 +1,7 @@
+<div id ="event">
+
+<h2><%= event.title%></h2>
+hosted by: <%= User.find(event.creator_id).username %>
+<%= event.description %> </li>
+</div>
+
