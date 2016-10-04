@@ -1,2 +1,6 @@
 <h1><%= @event.title %></h1>
 host: <%= User.find(@event.creator_id).username %>
+<br>
+guests: <% @event.attendees.each_entry do |entry| %>
+	<%= User.find(entry.attendee).name %>
+	<%end%>

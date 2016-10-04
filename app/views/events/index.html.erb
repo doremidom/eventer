@@ -1,1 +1,19 @@
-<%= render @events %>
+<h1>Past Events </h1>
+<% if @past_events.nil? %>
+<p>There aren't any past events! How sad.</p>
+<% else %>
+<% @past_events.each_entry do |event| %>
+<h2><%= event.title%></h2>
+<p><%= event.description%></p>
+<%end%>
+<%end%>
+
+<h1>Upcoming Events </h1>
+<% if @future_events.nil? %>
+<p>There aren't any past events! How sad.</p>
+<% else %>
+<% @future_events.each_entry do |event| %>
+<h2><%= event.title%></h2>
+<p><%= event.description%></p>
+<%end%>
+<%end%>

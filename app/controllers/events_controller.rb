@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   	if @event.valid? 
   		@event.save
   		flash.now[:success] = "Event created!"
-  		redirect_to users_show_path
+  		redirect_to current_user
   	else
   		flash[:danger] = "Invalid submission"
   		render 'new'
@@ -23,6 +23,8 @@ class EventsController < ApplicationController
 
   def index
   	@events = Event.all 
+    @past_events = Event.past
+    @future_events = Event.future
   end
 
   private
